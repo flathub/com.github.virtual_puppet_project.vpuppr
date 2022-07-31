@@ -18,10 +18,12 @@ modules:
     build-commands:
       - mkdir -p /app/bin/{resources,OpenSeeFaceFolder}
       - install -Dm644 com.github.virtual_puppet_project.vpuppr.metainfo.xml -t /app/share/metainfo/
+      - rm com.github.virtual_puppet_project.vpuppr.metainfo.xml
       
       - install -Dm 644 -t /app/share/applications com.github.virtual_puppet_project.vpuppr.desktop
       - install -Dm 644 com.github.virtual_puppet_project.vpuppr-128.png /app/share/icons/hicolor/128x128/apps/com.github.virtual_puppet_project.vpuppr.png
       - install -Dm 644 com.github.virtual_puppet_project.vpuppr-256.png /app/share/icons/hicolor/256x256/apps/com.github.virtual_puppet_project.vpuppr.png
+      - rm com.github.virtual_puppet_project.vpuppr-{128,256}.png
 
       - mv * /app/bin/
       - mv /app/bin/gui /app/bin/licenses /app/bin/scripts /app/bin/translations /app/bin/resources/
