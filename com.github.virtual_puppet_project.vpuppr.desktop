@@ -2,7 +2,7 @@
 Version=1.0
 Name=Virtual Puppet Project
 Comment=Live VTuber model renderer, written in Godot
-Exec=OpenSeeFaceGD.x86_64 %U
+Exec=vpuppr.x86_64 %U
 Terminal=false
 Icon=com.github.virtual_puppet_project.vpuppr
 Type=Application

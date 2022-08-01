@@ -1,22 +1,22 @@
 id: com.github.virtual_puppet_project.vpuppr
 runtime: org.freedesktop.Platform
-runtime-version: "21.08"
+runtime-version: "22.08beta"
 sdk: org.freedesktop.Sdk
-command: OpenSeeFaceGD.x86_64
+command: vpuppr.x86_64
 finish-args:
     - "--socket=x11"
     - "--share=ipc"
-    - "--share=network" # to set up the deps for openseeface
-    - "--device=all"
+    - "--share=network" # Required for communication between openseeface and vpuppr
+    - "--device=all" # webcam
     - "--socket=pulseaudio"
-    - "--filesystem=home"
+    - "--filesystem=home" # to see all files (vpuppr uses its own file picker), and function to select models properly
 modules:
 
   # --- Puppeteer ---
   - name: puppeteer
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/bin/{resources,OpenSeeFaceFolder}
+      - mkdir -p /app/bin/
       - install -Dm644 com.github.virtual_puppet_project.vpuppr.metainfo.xml -t /app/share/metainfo/
       - rm com.github.virtual_puppet_project.vpuppr.metainfo.xml
       
@@ -26,13 +26,15 @@ modules:
       - rm com.github.virtual_puppet_project.vpuppr-{128,256}.png
 
       - mv * /app/bin/
-      - mv /app/bin/gui /app/bin/licenses /app/bin/scripts /app/bin/translations /app/bin/resources/
-      - mv /app/bin/OpenSeeFace /app/bin/OpenSeeFaceFolder/
+      - chmod +x /app/bin/vpuppr.x86_64
+      - chmod +x /app/bin/resources/extensions/open_see_face/OpenSeeFaceFolder/OpenSeeFace/facetracker
+#      - mv /app/bin/gui /app/bin/licenses /app/bin/scripts /app/bin/translations /app/bin/resources/
+#      - mv /app/bin/OpenSeeFace /app/bin/OpenSeeFaceFolder/
 
     sources:
       - type: archive
-        url: https://github.com/virtual-puppet-project/vpuppr/releases/download/0.8.1/openseeface-gd_0.8.1_linux.zip
-        sha256: 31932f233a496054a3305033406e6f3fa2b14dc54e0d2fda3895349980714735
+        url: https://github.com/virtual-puppet-project/vpuppr/releases/download/0.9.0-alpha/vpuppr_0.9.0-alpha_linux_flatpak_compatible.zip
+        sha256: 19a5594311c4bf5bb8f16246b63b39f250bc3e000ae8003726cc5038270b465f
       - type: file
         path: com.github.virtual_puppet_project.vpuppr.desktop
       - type: file
