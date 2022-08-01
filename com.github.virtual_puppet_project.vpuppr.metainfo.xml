@@ -11,7 +11,7 @@
   <description>
     <p>VTuber application made with Godot 3.4.
 </p>
-    <p>This flatpak pulls the latest release of vpuppr. Expect it to not work properly at times.</p>
+    <p>This flatpak pulls osf-gd 0.8.1. When vpuppr is released, it will be updated accordingly.</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -19,9 +19,6 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.0-alpha" date="2022-07-31" type="alpha">
-      <url>https://github.com/virtual-puppet-project/vpuppr/releases/tag/0.9.0-alpha</url>
-    </release>
     <release version="0.8.1" date="2022-02-17" type="stable">
       <url>https://github.com/virtual-puppet-project/vpuppr/releases/tag/0.8.1</url>
     </release>
