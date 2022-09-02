@@ -1,6 +1,6 @@
 id: com.github.virtual_puppet_project.vpuppr
 runtime: org.freedesktop.Platform
-runtime-version: "22.08beta"
+runtime-version: "22.08"
 sdk: org.freedesktop.Sdk
 command: vpuppr.x86_64
 finish-args:
@@ -33,13 +33,8 @@ modules:
 
     sources:
       - type: archive
-<<<<<<< HEAD
         url: https://github.com/virtual-puppet-project/vpuppr/releases/download/0.9.0-alpha-2/vpuppr_0.9.0-alpha-2_linux_flatpak_compatible.zip
         sha256: 2cf553526eeb05491364d363a9add8996d3f2537fe7b58d6ff2086974c31dab4
-=======
-        url: https://github.com/virtual-puppet-project/vpuppr/releases/download/0.9.0-alpha/vpuppr_0.9.0-alpha_linux_flatpak_compatible.zip
-        sha256: 19a5594311c4bf5bb8f16246b63b39f250bc3e000ae8003726cc5038270b465f
->>>>>>> ff32d09ad4d376bbd4ee476dd239573f9514c567
       - type: file
         path: com.github.virtual_puppet_project.vpuppr.desktop
       - type: file
