@@ -16,7 +16,8 @@ modules:
   - name: puppeteer
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/bin/
+      - mkdir -p /app/bin/resources
+      - mkdir -p /app/share/vpuppr/resources/
       - install -Dm644 com.github.virtual_puppet_project.vpuppr.metainfo.xml -t /app/share/metainfo/
       - rm com.github.virtual_puppet_project.vpuppr.metainfo.xml
       
@@ -25,16 +26,18 @@ modules:
       - install -Dm 644 com.github.virtual_puppet_project.vpuppr-256.png /app/share/icons/hicolor/256x256/apps/com.github.virtual_puppet_project.vpuppr.png
       - rm com.github.virtual_puppet_project.vpuppr-{128,256}.png
 
-      - mv * /app/bin/
+      - mv vpuppr.* /app/bin/
       - chmod +x /app/bin/vpuppr.x86_64
-      - chmod +x /app/bin/resources/extensions/open_see_face/OpenSeeFaceFolder/OpenSeeFace/facetracker
-#      - mv /app/bin/gui /app/bin/licenses /app/bin/scripts /app/bin/translations /app/bin/resources/
+      - mv translations /app/bin/resources
+      - mv licenses extensions /app/share/vpuppr/resources
+      - chmod +x /app/share/vpuppr/resources/extensions/open_see_face/OpenSeeFaceFolder/OpenSeeFace/facetracker
+#      - mv /app/bin/gui /app/bin/licenses /app/bin/translations /app/bin/resources/
 #      - mv /app/bin/OpenSeeFace /app/bin/OpenSeeFaceFolder/
 
     sources:
       - type: archive
         url: https://github.com/virtual-puppet-project/vpuppr/releases/download/0.9.0-alpha-2/vpuppr_0.9.0-alpha-2_linux_flatpak_compatible.zip
-        sha256: 2cf553526eeb05491364d363a9add8996d3f2537fe7b58d6ff2086974c31dab4
+        sha256: 15ab443fe42d75004d3754a5f89f1243eac5dac7f41519073989df8c67df7c0f
       - type: file
         path: com.github.virtual_puppet_project.vpuppr.desktop
       - type: file
