@@ -1,5 +1,6 @@
 
 {
     "only-arches": ["x86_64"],
-    "end-of-life": "Future name change, stale package, slight mispackaging"
+    "end-of-life": "Future name change, stale package, slight mispackaging",
+    "end-of-life-rebase": "pro.vpup.vpuppr"
 } 
